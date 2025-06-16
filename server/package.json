@@ -1,25 +1,29 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "Express + Socket.IO backend for Real‑Time‑Socket‑Web‑App",
-  "license": "ISC",
-  "author": "Farhan Talkal",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^4.19.2",
-    "socket.io": "^4.8.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.9"
-  },
-  "engines": {
-    "node": ">=18"
-  }
+   "name": "server",
+   "version": "1.0.0",
+   "description": "Express + Socket.IO backend for Real‑Time‑Socket‑Web‑App",
+   "license": "ISC",
+   "author": "Farhan Talkal",
+   "type": "commonjs",
+   "main": "index.js",
+   "scripts": {
+-    "start": "nodemon index.js",
++    "start": "node index.js",              // 👉 Render runs this in prod
++    "dev":   "nodemon index.js"            // 👉 use locally
+   },
+   "dependencies": {
+-    "cors": "^2.8.5",
+-    "express": "^5.1.0",
+-    "nodemon": "^3.1.9",
+-    "socket.io": "^4.8.1"
++    "cors": "^2.8.5",
++    "dotenv": "^16.4.5",                   // 👉 fixed “Cannot find module 'dotenv'”
++    "express": "^4.19.2",                  // 👉 stable 4‑series; 5.1.0 was missing ./router
++    "socket.io": "^4.8.1"
+   },
+-  "devDependencies": {},
++  "devDependencies": {                     // 👉 keep nodemon only for dev
++    "nodemon": "^3.1.9"
++  },
+   "engines": { "node": ">=18" }
 }

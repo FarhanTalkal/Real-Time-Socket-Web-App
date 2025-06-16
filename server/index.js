@@ -1,4 +1,3 @@
-
 require("dotenv").config();
 
 const express = require("express");
@@ -8,24 +7,17 @@ const { Server } = require("socket.io");
 
 const app = express();
 
-const FRONTEND_ORIGIN = process.env.ORIGIN || "http://localhost:3000";
 
-app.use(
-  cors({
-    origin: FRONTEND_ORIGIN,
-    credentials: true,         
-  })
-);
+const FRONTEND_ORIGIN = process.env.ORIGIN || "http://localhost:3000";
+app.use(cors({ origin: FRONTEND_ORIGIN, credentials: true }));
+
 
 app.get("/", (_, res) => res.send("🎉  Backend up and running"));
 
-const server = http.createServer(app);
 
+const server = http.createServer(app);
 const io = new Server(server, {
-  cors: {
-    origin: FRONTEND_ORIGIN,
-    methods: ["GET", "POST"],
-  },
+  cors: { origin: FRONTEND_ORIGIN, methods: ["GET", "POST"] }
 });
 
 io.on("connection", (socket) => {
@@ -45,8 +37,6 @@ io.on("connection", (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 3001;
 
-server.listen(PORT, () => {
-  console.log(`🚀  Server listening on port ${PORT}`);
-});
+const PORT = process.env.PORT || 3001;
+server.listen(PORT, () => console.log(`🚀  Server listening on ${PORT}`));
