@@ -1,19 +1,28 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Express + Socket.IO backend for Real‑Time‑Socket‑Web‑App",
   "license": "ISC",
-  "author": "",
+  "author": "Farhan Talkal",
   "type": "commonjs",
   "main": "index.js",
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node index.js",          
+    "dev": "nodemon index.js"          
   },
+
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "nodemon": "^3.1.9",
+    "express": "^4.19.2",              
     "socket.io": "^4.8.1"
+  },
+
+  "devDependencies": {                 
+    "nodemon": "^3.1.9"
+  },
+
+  "engines": {                        
+    "node": ">=18"
   }
 }
