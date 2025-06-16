@@ -2,12 +2,13 @@ import { useState } from "react";
 import "./App.css";
 import io from "socket.io-client";
 import Chat from "./Chat";
-const socket = io("https://socket-calling.onrender.com");
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
-
+  const socket = io(
+  process.env.REACT_APP_BACKEND_URL || "http://localhost:3001"
+);
   const joinRoom = () => {
     if (username !== "" && room !== "") {
       socket.emit("join_room", room);
