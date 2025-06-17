@@ -10,7 +10,7 @@ Real‑time chat application built with **React**, **Node.js/Express**, and **So
 | Screen | Preview |
 | ------ | ------- |
 | Home | ![Home](./assets/Home.png) |
-| Join Room | ![Join Room](./assets/Joining_a_room.png) |
+| Join Room | ![Join Room](./assets/Joining_a_Room.png) |
 | Chat Room 1| ![Chat](./assets/Conversation_1.png) |
 | Chat Room 2| ![Chat](./assets/Conversation_2.png) |
 
