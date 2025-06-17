@@ -1,4 +1,4 @@
-# 🧩 <Project Name>
+# 🧩 <Socket Calling>
 
 Real‑time chat application built with **React**, **Node.js/Express**, and **Socket.io** for low‑latency, bidirectional communication.
 
